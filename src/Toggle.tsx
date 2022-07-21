@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import { Switch } from "@material-ui/core";
+import * as S from "./styles";
 
-export function Toggle({ title }) {
+type Props = {
+  title: string;
+};
+
+export const Toggle = ({ title }: Props) => {
   const [active, setActive] = useState(true);
-  let text;
-  let color;
+
+  let text: String;
+  let colorOfText: String;
 
   if (active) {
     text = "On fire for the party!";
-    color = "red";
+    colorOfText = "red";
   } else {
     text = "Off to sleep.";
-    color = "blue";
+    colorOfText = "blue";
   }
+
   return (
     <div>
       <h1>{title}</h1>
       <Switch checked={active} onChange={() => setActive(!active)} />
-      <span style={{ color: color }}>{text}</span>
+      <S.Span c={colorOfText}>{text}</S.Span>
     </div>
   );
-}
+};

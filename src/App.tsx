@@ -2,7 +2,7 @@ import React from "react";
 
 import { Toggle } from "./Toggle";
 
-export function App() {
+export const App = () => {
   return (
     <div>
       <Toggle title="General Switch Controller" />
@@ -10,4 +10,4 @@ export function App() {
       <Toggle title="Switch Controller" />
     </div>
   );
-}
+};
